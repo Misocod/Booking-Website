@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusPass - Profile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4" role="banner">
+        <div class="container">
+            <h1>BusPass</h1>
+            <p>Your Profile</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5" role="main">
+        <!-- Profile Section -->
+        <section class="bg-light p-5 rounded shadow">
+            <h2 class="text-center mb-4">Manage Your Profile</h2>
+            <form id="profile-form" novalidate>
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label for="full-name" class="form-label">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" class="form-control" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <label for="phone-number" class="form-label">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" class="form-control" required>
+                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <!-- Access Card Number -->
+                <div class="mb-3">
+                    <label for="access-card" class="form-label">Access Card Number:</label>
+                    <input type="text" id="access-card" name="access-card" class="form-control" required pattern="\d{16}">
+                    <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
+                </div>
+                <!-- Profile Picture Upload -->
+                <div class="mb-3">
+                    <label for="profile-picture" class="form-label">Profile Picture:</label>
+                    <input type="file" id="profile-picture" name="profile-picture" class="form-control" accept="image/*">
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-5">Save Changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5" role="contentinfo">
+        &copy; 2023 BusPass Ltd. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('profile-form');
+            const fullName = document.getElementById('full-name');
+            const phoneNumber = document.getElementById('phone-number');
+            const accessCard = document.getElementById('access-card');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    // Form is valid, you can submit it or perform other actions
+                    console.log('Form is valid');
+                } else {
+                    // Form is invalid, show error messages
+                    console.log('Form is invalid');
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+
+                // Validate Full Name
+                if (fullName.value.trim() === '') {
+                    fullName.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    fullName.classList.remove('is-invalid');
+                }
+
+                // Validate Phone Number
+                const phonePattern = /^[0-9]{10}$/; // Example pattern for a 10-digit phone number
+                if (!phonePattern.test(phoneNumber.value.trim())) {
+                    phoneNumber.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    phoneNumber.classList.remove('is-invalid');
+                }
+
+                // Validate Access Card Number
+                const cardPattern = /^\d{16}$/;
+                if (!cardPattern.test(accessCard.value.trim())) {
+                    accessCard.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    accessCard.classList.remove('is-invalid');
+                }
+
+                return isValid;
+            }
+        });
+    </script>
+</body>
+</html>

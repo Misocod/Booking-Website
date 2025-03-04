@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to BusPass to access your account and load your bus rides online.">
+    <meta name="keywords" content="BusPass, login, bus rides, online bus tickets, South Africa">
+    <meta name="author" content="Simiso Sithole">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BusPass - Login">
+    <meta property="og:description" content="Login to BusPass to access your account and load your bus rides online.">
+    <meta property="og:image" content="images/bus_logo.png">
+    <meta property="og:url" content="https://www.buspass.com/login.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BusPass - Login">
+    <meta name="twitter:description" content="Login to BusPass to access your account and load your bus rides online.">
+    <meta name="twitter:image" content="images/bus_logo.png">
+    
+    <title>BusPass - Login</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- Import Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BusPass",
+      "url": "https://www.buspass.com",
+      "logo": "https://www.buspass.com/images/bus_logo.png",
+      "sameAs": [
+        "https://www.facebook.com/buspass",
+        "https://www.twitter.com/buspass",
+        "https://www.instagram.com/buspass"
+      ]
+    }
+    </script>
+    
+    <!-- Security Features -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4" role="banner">
+        <div class="container">
+            <h1>BusPass</h1>
+            <p>Access your account</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5" role="main">
+        <!-- Login Form -->
+        <section class="bg-light p-5 rounded shadow">
+            <h2 class="text-center mb-4">Sign In</h2>
+            <form id="login-form" novalidate>
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <label for="login-phone-number" class="form-label">Phone Number:</label>
+                    <input type="tel" id="login-phone-number" name="phone-number" class="form-control" required placeholder="Enter your phone number">
+                    <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="login-password" class="form-label">Password:</label>
+                    <input type="password" id="login-password" name="password" class="form-control" required placeholder="Enter your password">
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success px-5">Sign In</button>
+                </div>
+                <!-- Registration Link -->
+                <p class="text-center mt-3">Don't have an account? <a href="register.html">Sign Up</a></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5" role="contentinfo">
+        &copy; 2025 BusPass Ltd. All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/auth.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            var phoneNumber = document.getElementById('login-phone-number').value.trim();
+            var password = document.getElementById('login-password').value.trim();
+            if (phoneNumber === '' || password === '') {
+                event.preventDefault();
+                if (phoneNumber === '') {
+                    document.getElementById('login-phone-number').classList.add('is-invalid');
+                }
+                if (password === '') {
+                    document.getElementById('login-password').classList.add('is-invalid');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

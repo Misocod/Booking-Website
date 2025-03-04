@@ -1,0 +1,347 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F9FA; /* Light gray background */
+    color: #212529; /* Dark text color */
+    margin: 0;
+    padding: 0;
+    font-size: 1rem; /* Base font size */
+    line-height: 1.6; /* Improved readability */
+}
+
+a {
+    color: #007BFF; /* Primary color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Darker shade of primary color */
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    background-image: url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF; /* White */
+    padding: 2rem 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+}
+
+header nav ul li a {
+    color: #FFFFFF; /* White */
+    font-weight: 600;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Picture */
+.profile-picture {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Main Content Styles */
+main {
+    padding-bottom: 3rem;
+}
+
+section {
+    max-width: 800px; /* Increased max-width for better readability */
+    margin: 0 auto;
+    padding: 1rem; /* Added padding for better spacing */
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.is-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+}
+
+.is-invalid + .invalid-feedback {
+    display: block;
+}
+
+.is-valid {
+    border-color: #28a745;
+}
+
+.is-valid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25);
+}
+
+/* Buttons */
+.btn {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.btn-primary {
+    background-color: #007BFF; /* Primary color */
+    border-color: #007BFF;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+    border-color: #004085;
+}
+
+.btn-success {
+    background-color: #28A745; /* Secondary color */
+    border-color: #28A745;
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker shade of secondary color */
+    border-color: #1e7e34;
+}
+
+.btn-info {
+    background-color: #17A2B8; /* Accent color */
+    border-color: #17A2B8;
+}
+
+.btn-info:hover {
+    background-color: #138496; /* Darker shade of accent color */
+    border-color: #117a8b;
+}
+
+.btn-light {
+    background-color: #F8F9FA; /* Light gray */
+    border-color: #F8F9FA;
+    color: #212529; /* Dark text color */
+}
+
+.btn-light:hover {
+    background-color: #E2E6EA; /* Darker shade of light gray */
+    border-color: #DAE0E5;
+    color: #212529; /* Dark text color */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343A40; /* Dark gray */
+    color: #ADB5BD; /* Light gray */
+    padding: 1.25rem 0;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #ADB5BD; /* Light gray */
+}
+
+footer a:hover {
+    color: #FFFFFF; /* White */
+    text-decoration: underline;
+}
+
+/* Loader Styles */
+#loading-indicator {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive Image */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 767.98px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
+
+/* Additional Styles for Professional Look */
+.container {
+    padding: 0 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-primary {
+    background-color: #007BFF !important;
+}
+
+.bg-secondary {
+    background-color: #6C757D !important;
+}
+
+.bg-success {
+    background-color: #28A745 !important;
+}
+
+.bg-danger {
+    background-color: #DC3545 !important;
+}
+
+.bg-warning {
+    background-color: #FFC107 !important;
+}
+
+.bg-info {
+    background-color: #17A2B8 !important;
+}
+
+.bg-light {
+    background-color: #F8F9FA !important;
+}
+
+.bg-dark {
+    background-color: #343A40 !important;
+}
+
+.text-primary {
+    color: #007BFF !important;
+}
+
+.text-secondary {
+    color: #6C757D !important;
+}
+
+.text-success {
+    color: #28A745 !important;
+}
+
+.text-danger {
+    color: #DC3545 !important;
+}
+
+.text-warning {
+    color: #FFC107 !important;
+}
+
+.text-info {
+    color: #17A2B8 !important;
+}
+
+.text-light {
+    color: #F8F9FA !important;
+}
+
+.text-dark {
+    color: #343A40 !important;
+}
+
+.text-muted {
+    color: #6C757D !important;
+}
+
+.text-white {
+    color: #FFFFFF !important;
+}
+
